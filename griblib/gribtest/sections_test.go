@@ -6,7 +6,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/nilsmagnus/grib/griblib"
+	"github.com/cgray1234/grib/griblib"
 )
 
 func Test_read_section0(t *testing.T) {

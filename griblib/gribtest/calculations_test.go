@@ -1,8 +1,9 @@
 package gribtest
 
 import (
-	"github.com/nilsmagnus/grib/griblib"
 	"testing"
+
+	"github.com/cgray1234/grib/griblib"
 )
 
 func TestCalculateAverageValue_0_values(t *testing.T) {

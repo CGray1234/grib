@@ -5,9 +5,9 @@ import (
 	"io"
 	"testing"
 
+	"github.com/cgray1234/grib/internal/mocks"
+	"github.com/cgray1234/grib/internal/reader"
 	"github.com/golang/mock/gomock"
-	"github.com/nilsmagnus/grib/internal/mocks"
-	"github.com/nilsmagnus/grib/internal/reader"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

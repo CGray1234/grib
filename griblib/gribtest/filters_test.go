@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/nilsmagnus/grib/griblib"
+	"github.com/cgray1234/grib/griblib"
 )
 
 func Test_calculcate_startStopIndexes(t *testing.T) {

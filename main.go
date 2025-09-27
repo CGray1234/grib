@@ -6,8 +6,9 @@ import (
 	"math"
 	"os"
 
-	"github.com/nilsmagnus/grib/griblib"
 	"io"
+
+	"github.com/cgray1234/grib/griblib"
 )
 
 func optionsFromFlag() griblib.Options {

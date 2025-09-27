@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/nilsmagnus/grib/internal/reader"
+	"github.com/cgray1234/grib/internal/reader"
 )
 
 // Data3 is a Grid point data - complex packing and spatial differencing

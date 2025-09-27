@@ -1,4 +1,4 @@
-![Build](https://github.com/nilsmagnus/grib/actions/workflows/go.yml/badge.svg)
+![Build](https://github.com/cgray1234/grib/actions/workflows/go.yml/badge.svg)
 
 GRIB2 Golang parser application and library
 ================================
@@ -11,7 +11,7 @@ For a full presentation of the library, see https://github.com/nilsmagnus/what-i
 
 Install by typing
 
-    go get -u github.com/nilsmagnus/grib
+    go get -u github.com/cgray1234/grib
 
 ## Library Usage:
 
@@ -144,10 +144,10 @@ go test -bench=. -benchmem -memprofile memprofile.out -cpuprofile profile.out
 category number 0,parameter number 0,surface type 1, surface value 0 max: 329.500000 min: 197.900000
 goos: linux
 goarch: amd64
-pkg: github.com/nilsmagnus/grib/griblib/gribtest
+pkg: github.com/cgray1234/grib/griblib/gribtest
 BenchmarkReadMessages-4   	     100	  11681028 ns/op	 6587281 B/op	    9344 allocs/op
 PASS
-ok  	github.com/nilsmagnus/grib/griblib/gribtest	5.456s
+ok  	github.com/cgray1234/grib/griblib/gribtest	5.456s
 go tool pprof -top profile.out
 File: gribtest.test
 Type: cpu
@@ -156,17 +156,17 @@ Duration: 5.41s, Total samples = 5.34s (98.77%)
 Showing nodes accounting for 5.12s, 95.88% of 5.34s total
 Dropped 69 nodes (cum <= 0.03s)
       flat  flat%   sum%        cum   cum%
-     1.58s 29.59% 29.59%      1.78s 33.33%  github.com/nilsmagnus/grib/griblib.(*BitReader).readBit
-     1.07s 20.04% 49.63%      2.85s 53.37%  github.com/nilsmagnus/grib/griblib.(*BitReader).readUint
+     1.58s 29.59% 29.59%      1.78s 33.33%  github.com/cgray1234/grib/griblib.(*BitReader).readBit
+     1.07s 20.04% 49.63%      2.85s 53.37%  github.com/cgray1234/grib/griblib.(*BitReader).readUint
      0.53s  9.93% 59.55%      0.53s  9.93%  runtime.memclrNoHeapPointers
      0.36s  6.74% 66.29%      0.85s 15.92%  encoding/binary.(*decoder).value
-     0.15s  2.81% 69.10%      2.78s 52.06%  github.com/nilsmagnus/grib/griblib.(*BitReader).readIntsBlock
-     0.15s  2.81% 71.91%      0.15s  2.81%  github.com/nilsmagnus/grib/griblib.(*Data3).applySpacialDifferencing
+     0.15s  2.81% 69.10%      2.78s 52.06%  github.com/cgray1234/grib/griblib.(*BitReader).readIntsBlock
+     0.15s  2.81% 71.91%      0.15s  2.81%  github.com/cgray1234/grib/griblib.(*Data3).applySpacialDifferencing
      0.14s  2.62% 74.53%      0.26s  4.87%  reflect.Value.Index
      0.13s  2.43% 76.97%      0.20s  3.75%  bytes.(*Buffer).ReadByte
-     0.11s  2.06% 79.03%      0.28s  5.24%  github.com/nilsmagnus/grib/griblib.(*Data2).scaleValues
+     0.11s  2.06% 79.03%      0.28s  5.24%  github.com/cgray1234/grib/griblib.(*Data2).scaleValues
      0.11s  2.06% 81.09%      0.19s  3.56%  reflect.Value.SetUint
-     0.08s  1.50% 82.58%      0.08s  1.50%  github.com/nilsmagnus/grib/griblib.Data0.scaleFunc.func1
+     0.08s  1.50% 82.58%      0.08s  1.50%  github.com/cgray1234/grib/griblib.Data0.scaleFunc.func1
      0.08s  1.50% 84.08%      0.08s  1.50%  reflect.(*rtype).Kind (inline)
      0.07s  1.31% 85.39%      0.07s  1.31%  bytes.(*Buffer).empty (inline)
      0.06s  1.12% 86.52%      0.68s 12.73%  runtime.mallocgc
@@ -191,16 +191,16 @@ Time: Feb 12, 2019 at 8:19pm (CET)
 Showing nodes accounting for 3.39GB, 99.31% of 3.41GB total
 Dropped 43 nodes (cum <= 0.02GB)
       flat  flat%   sum%        cum   cum%
-    1.52GB 44.71% 44.71%     2.05GB 60.09%  github.com/nilsmagnus/grib/griblib.(*Data2).extractData
-    0.76GB 22.19% 66.90%     0.76GB 22.19%  github.com/nilsmagnus/grib/griblib.(*Data2).scaleValues
-    0.48GB 14.09% 80.99%     0.48GB 14.09%  github.com/nilsmagnus/grib/griblib.(*BitReader).readIntsBlock
-    0.26GB  7.68% 88.67%     0.34GB 10.01%  github.com/nilsmagnus/grib/griblib.(*Data2).extractBitGroupParameters
-    0.08GB  2.38% 91.05%     0.08GB  2.38%  github.com/nilsmagnus/grib/griblib.(*BitReader).readUintsBlock
-    0.06GB  1.90% 92.95%     3.34GB 97.93%  github.com/nilsmagnus/grib/griblib.readMessage
+    1.52GB 44.71% 44.71%     2.05GB 60.09%  github.com/cgray1234/grib/griblib.(*Data2).extractData
+    0.76GB 22.19% 66.90%     0.76GB 22.19%  github.com/cgray1234/grib/griblib.(*Data2).scaleValues
+    0.48GB 14.09% 80.99%     0.48GB 14.09%  github.com/cgray1234/grib/griblib.(*BitReader).readIntsBlock
+    0.26GB  7.68% 88.67%     0.34GB 10.01%  github.com/cgray1234/grib/griblib.(*Data2).extractBitGroupParameters
+    0.08GB  2.38% 91.05%     0.08GB  2.38%  github.com/cgray1234/grib/griblib.(*BitReader).readUintsBlock
+    0.06GB  1.90% 92.95%     3.34GB 97.93%  github.com/cgray1234/grib/griblib.readMessage
     0.06GB  1.76% 94.70%     0.06GB  1.77%  encoding/binary.Read
-    0.06GB  1.70% 96.40%     3.40GB 99.64%  github.com/nilsmagnus/grib/griblib.ReadMessage
-    0.06GB  1.62% 98.02%     0.06GB  1.62%  github.com/nilsmagnus/grib/griblib.makeBitReader
-    0.04GB  1.29% 99.31%     0.04GB  1.29%  github.com/nilsmagnus/grib/griblib.(*bitGroupParameter).zeroGroup (inline)
+    0.06GB  1.70% 96.40%     3.40GB 99.64%  github.com/cgray1234/grib/griblib.ReadMessage
+    0.06GB  1.62% 98.02%     0.06GB  1.62%  github.com/cgray1234/grib/griblib.makeBitReader
+    0.04GB  1.29% 99.31%     0.04GB  1.29%  github.com/cgray1234/grib/griblib.(*bitGroupParameter).zeroGroup (inline)
 ```
 
 * extractData is the most memory-hungry function. It could probably be more efficient, but is now optimized 80%.  
