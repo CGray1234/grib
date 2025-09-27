@@ -31,25 +31,7 @@ type Data41 struct {
 	Type         uint8   `json:"type"`
 }
 
-func (template Data41) getRefScale() (float64, float64) {
-	bscale := math.Pow(2.0, float64(template.BinaryScale))
-	dscale := math.Pow(10.0, -float64(template.DecimalScale))
-
-	scale := bscale * dscale
-	ref := dscale * float64(template.Reference)
-
-	return ref, scale
-}
-
-func (template Data41) scaleFunc() func(uintValue int64) float64 {
-	ref, scale := template.getRefScale()
-	return func(value int64) float64 {
-		signed := int64(value)
-		return ref + float64(signed)*scale
-	}
-}
-
-// ParseData0 parses data0 struct from the reader into the an array of floating-point values
+// Data41 is decoded as a PNG and then treated as data0
 func ParseData41(dataReader io.Reader, dataLength int, template *Data41) ([]float64, error) {
 
 	fld := []float64{}
@@ -71,8 +53,10 @@ func ParseData41(dataReader io.Reader, dataLength int, template *Data41) ([]floa
 
 	for y := 0; y < img.Bounds().Max.Y; y++ {
 		for x := 0; x < img.Bounds().Max.X; x++ {
+			// Only support grayscale as of now
 			pixelColor := img.At(x, y).(color.Gray16)
 
+			// https://codes.ecmwf.int/grib/format/grib2/regulations/#:~:text=Y%20*%2010D%3D%20R%20%2B%20(X1%2BX2)%20*%202E
 			fld = append(fld, (float64(template.Reference)+float64(pixelColor.Y)*math.Pow(2, float64(template.BinaryScale)))/math.Pow(10, float64(template.DecimalScale)))
 		}
 	}
